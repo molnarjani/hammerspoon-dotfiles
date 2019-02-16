@@ -1,3 +1,5 @@
+config = require('config')
+
 spotify_status = hs.menubar.new()
 function setSpotifyDisplay()
 	state = hs.spotify.getPlaybackState()
@@ -16,7 +18,7 @@ if spotify_status then
     hs.timer.doEvery(0.1, setSpotifyDisplay) 
 end
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "space", function()
+hs.hotkey.bind(config.hyper, "space", function()
 	hs.spotify.playpause()
 end)
 
