@@ -11,14 +11,14 @@ function setSpotifyDisplay()
     if state == hs.spotify.state_paused then
 		spotify_status:setTitle('||')
 	end	
-
 end
 
 if spotify_status then
-    hs.timer.doEvery(0.1, setSpotifyDisplay) 
+    hs.timer.doEvery(0.1, setSpotifyDisplay)
 end
 
 hs.hotkey.bind(config.hyper, "space", function()
+    logger.df('Spotify play toggled')
 	hs.spotify.playpause()
 end)
 

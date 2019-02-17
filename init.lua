@@ -11,9 +11,14 @@ function reloadConfig(files)
     end
 end
 myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, 'y', hs.toggleConsole)
+hs.application.enableSpotlightForNameSearches(true)
 
 hs.loadSpoon("SpoonInstall")
+
+logger = hs.logger.new('main')
+logger.setLogLevel('debug')
+logger.df("Logger initialized!")
 
 Install=spoon.SpoonInstall
 
@@ -51,4 +56,8 @@ hs.hotkey.bind(config.hyper, "C", function()
 end)
 
 require('window_bindings')
+
+-- Order in this case is required to stay the same since im too lazy to make it a proper package
+-- headphones_watcher depends on state from spotify_bindings
 require('spotify_bindings')
+require('headphones_watcher')
