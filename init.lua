@@ -23,7 +23,7 @@ logger.df("Logger initialized!")
 Install=spoon.SpoonInstall
 
 Install:andUse('WindowScreenLeftAndRight')
-Install:andUse('WindowHalfsAndThirds')
+Install:andUse("WindowHalfsAndThirds")
 
 Install:andUse('BingDaily')
 Install:andUse('HCalendar')
@@ -38,9 +38,9 @@ spoon.WindowScreenLeftAndRight:bindHotkeys({
     screen_right= { config.hyper, "P" },
 })
 
-spoon.WindowScreenLeftAndRight:bindHotkeys({
-    screen_left = { config.hyper, "N" },
-    screen_right= { config.hyper, "P" },
+spoon.WindowHalfsAndThirds:bindHotkeys({
+    left_half = { config.hyper, "Left" },
+    right_half = { config.hyper, "Right" },
 })
 
 spoon.PasswordGenerator:bindHotkeys({
