@@ -32,6 +32,7 @@ Install:andUse('Commander')
 Install:andUse('CountDown')
 Install:andUse('PasswordGenerator')
 Install:andUse('PopupTranslateSelection')
+Install:andUse('ReloadConfiguration')
 
 spoon.WindowScreenLeftAndRight:bindHotkeys({
     screen_left = { config.hyper, "N" },
@@ -43,17 +44,21 @@ spoon.WindowHalfsAndThirds:bindHotkeys({
     right_half = { config.hyper, "Right" },
 })
 
-spoon.PasswordGenerator:bindHotkeys({
-    paste  = { config.hyper, "V" },
+spoon.PopupTranslateSelection:bindHotkeys({
+    translate = { { "ctrl", "alt", "cmd" }, "t" },
 })
 
-spoon.PopupTranslateSelection:bindHotkeys({
-    translate = { { "ctrl", "alt", "cmd" }, "e" },
+spoon.ReloadConfiguration:bindHotkeys({
+    reloadConfiguration = { { "ctrl", "alt", "cmd" }, "r" },
 })
 
 hs.hotkey.bind(config.hyper, "C", function()
     spoon.Commander:show()
 end)
+
+spoon.PasswordGenerator:bindHotkeys({
+    paste  = { config.hyper, "V" },
+})
 
 require('window_bindings')
 

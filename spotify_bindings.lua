@@ -22,3 +22,13 @@ hs.hotkey.bind(config.hyper, "space", function()
 	hs.spotify.playpause()
 end)
 
+hs.hotkey.bind(config.hyper, ",", function()
+	logger.df('Spotify previous')
+	hs.spotify.previous()
+end)
+
+hs.hotkey.bind(config.hyper, ".", function()
+	logger.df('Spotify next')
+	hs.spotify.next()
+end)
+
