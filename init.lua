@@ -10,6 +10,7 @@ function reloadConfig(files)
         hs.reload()
     end
 end
+
 myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, 'y', hs.toggleConsole)
 hs.application.enableSpotlightForNameSearches(true)
@@ -33,6 +34,7 @@ Install:andUse('CountDown')
 Install:andUse('PasswordGenerator')
 Install:andUse('PopupTranslateSelection')
 Install:andUse('ReloadConfiguration')
+-- Install:andUse('Kubedex')
 
 spoon.WindowScreenLeftAndRight:bindHotkeys({
     screen_left = { config.hyper, "N" },
@@ -57,7 +59,7 @@ hs.hotkey.bind(config.hyper, "C", function()
 end)
 
 spoon.PasswordGenerator:bindHotkeys({
-    paste  = { config.hyper, "V" },
+    copy  = { config.hyper, "G" },
 })
 
 require('window_bindings')

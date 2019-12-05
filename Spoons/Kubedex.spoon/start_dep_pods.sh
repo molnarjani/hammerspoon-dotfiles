@@ -1,0 +1,2 @@
+#!/bin/bash
+pde dep authservice contactservice coverservice dashboardservice folderservice licensetypeservice loginservice muladmin paymentservice presentationservice prezipage sessionservice signup  switchboard tokenbroker usersettingsservice zuisite zuoraservice
